@@ -8,7 +8,7 @@ namespace Blog.Data
         const string connectionString = "Server=DELLG15\\SQLEXPRESS;Database=Blog; Integrated Security =SSPI; TrustServerCertificate=True";
         public DbSet<Category> Categories { get; set; }
 
-        //public DbSet<Post> Posts { get; set; }
+         public DbSet<Post> Posts { get; set; }
         // public DbSet<PostTag> PostTags { get; set; }
         //      public DbSet<Role> Roles { get; set; }
         public DbSet<Tag> Tags { get; set; }
@@ -19,6 +19,7 @@ namespace Blog.Data
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlServer(connectionString);
+            options.LogTo(Console.WriteLine);
 
         }
     }

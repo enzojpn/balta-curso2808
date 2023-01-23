@@ -1,5 +1,8 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Blog.Models
 {
+    [Table("User")]
     public class User{
         public int Id { get; set; }
 
@@ -8,6 +11,7 @@ namespace Blog.Models
         public string PasswordHash { get; set; }
         public string Image { get; set; }
         public string Slug { get; set; }
+        public string  Bio { get; set; }
 
     }
 }
